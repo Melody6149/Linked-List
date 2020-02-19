@@ -1,5 +1,6 @@
 #pragma once
-#include"Node.h"
+#include "Node.h"
+#include "Iterator.h"
 
 
 
@@ -12,14 +13,17 @@ protected:
 	Node<T>* m_last;
 
 public:
+	void initializeList();
+	bool isEmptyList();
+	int length();
 	T front();
 
 		T back();
 	
-	
+		virtual bool search(const T&) = 0;
 		virtual void insertFirst(const T&) = 0;
-	
 		virtual void insertLast(const T&) = 0;
+		virtual void deleteNode(const T&) = 0;
 
 		bool isEmpty();
 };

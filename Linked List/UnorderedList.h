@@ -1,14 +1,22 @@
 #pragma once
-#include "List.h";
-#include "Node.h";
-#include "Iterator.h";
+#include "List.h"
+
 template<typename T>
+
 class UnorderedList : List<T>
 {
 public:
+	bool search(const T&);
 	void insertFirst(const T&);
 	void insertLast(const T&);
+	void deleteNode(const T&);
 };
+
+template<typename T>
+inline bool UnorderedList<T>::search(const T &)
+{
+	return false;
+}
 
 template<typename T>
 void UnorderedList<T>::insertFirst(const T & tempinfo)
@@ -44,4 +52,9 @@ void UnorderedList<T>::insertLast(const T & tempinfo)
 	this->m_last->next = node;
 	this->m_last = node;
 	this->m_count++;
+}
+
+template<typename T>
+inline void UnorderedList<T>::deleteNode(const T &)
+{
 }
