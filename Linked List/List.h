@@ -17,9 +17,9 @@ public:
 		T back();
 	
 	
-		virtual void insertfirst(const T&);
+		virtual void insertFirst(const T&) = 0;
 	
-		void insertLast(const T&);
+		virtual void insertLast(const T&) = 0;
 
 		bool isEmpty();
 };
@@ -34,16 +34,6 @@ template<typename T>
 T List<T>::back()
 {
 	return m_last;
-}
-
-template<typename T>
-void List<T>::insertfirst(const T &)
-{
-}
-
-template<typename T>
-void List<T>::insertLast(const T &)
-{
 }
 
 template<typename T>
