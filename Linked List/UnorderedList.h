@@ -66,4 +66,10 @@ void UnorderedList<T>::insertLast(const T & tempinfo)
 template<typename T>
 inline void UnorderedList<T>::deleteNode(const T &)
 {
+	T tempNode = begin;
+	for (auto i = this->begin(); i != this->end(); ++i)
+		if (*i == search)
+		{
+			++tempNode
+		}
 }
