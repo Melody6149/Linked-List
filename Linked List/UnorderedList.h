@@ -1,6 +1,7 @@
 #pragma once
 #include "List.h"
 
+
 template<typename T>
 
 class UnorderedList : List<T>
@@ -13,8 +14,16 @@ public:
 };
 
 template<typename T>
-inline bool UnorderedList<T>::search(const T &)
+inline bool UnorderedList<T>::search(const T & search)
 {
+
+	for (auto i = this->begin(); i != this->end(); ++i)
+	{
+		if (*i == search)
+		{
+			return true;
+		}
+	}
 	return false;
 }
 

@@ -17,6 +17,8 @@ public:
 	bool isEmptyList();
 	int length();
 	T front();
+	Iterator<T> begin();
+	Iterator<T> end();
 
 		T back();
 	
@@ -32,6 +34,18 @@ template<typename T>
 T List<T>::front()
 {
 	return m_first;
+}
+
+template<typename T>
+Iterator<T> List<T>::begin()
+{
+	return Iterator<T>(m_first);
+}
+
+template<typename T>
+Iterator<T> List<T>::end()
+{
+	return Iterator<T>(m_last);
 }
 
 template<typename T>

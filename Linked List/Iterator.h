@@ -38,12 +38,14 @@ template<typename T>
 Iterator<T> Iterator<T>::operator++() // goes to the next node
 {
 	current = current->next;
+	return *this;
 }
 
 template<typename T>
 Iterator<T> Iterator<T>::operator--() //goes to previous node
 {
 	current = current->previous;
+	return *this;
 }
 
 template<typename T>
