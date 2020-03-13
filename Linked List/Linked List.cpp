@@ -8,10 +8,15 @@ int main()
 {
 	UnorderedList<int> mylist;
 	mylist.insertFirst(1);
+	mylist.deleteNode(1);
 	mylist.insertFirst(2);
 	mylist.insertFirst(3);
-	mylist.insertFirst(4);
-	mylist.search(6);
+	mylist.insertLast(4);
+	if (mylist.search(5))
+	{
+		std::cout << "this is to show that the search did work" << std::endl;
+	}
+	mylist.deleteNode(2);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

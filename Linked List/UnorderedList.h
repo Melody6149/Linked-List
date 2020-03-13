@@ -64,12 +64,45 @@ void UnorderedList<T>::insertLast(const T & tempinfo)
 }
 
 template<typename T>
-inline void UnorderedList<T>::deleteNode(const T &)
+inline void UnorderedList<T>::deleteNode(const T & tempname)
 {
-	T tempNode = begin;
+	Node<T>* current = &(*this->m_first);
+	if (this->m_count == 1)
+	{
+		delete current;
+		this->m_count--;
+		this->m_first = nullptr;
+		return;
+	}
 	for (auto i = this->begin(); i != this->end(); ++i)
-		if (*i == search)
+	{
+		if (*i == tempname)
 		{
-			++tempNode
+			if(tempname == this->m_first->info)
+			{
+				this->m_first = this->m_first->next;
+				this->m_first->previous = nullptr;
+				delete current;
+				this->m_count--;
+				return;
+			}
+			else
+			{
+				current->previous->next = current->next;
+				current->next->previous = current->previous;
+				this->m_count--;
+					delete current;
+					return;
+			}
 		}
+		current = current->next;
+	}
+	if (tempname == this->m_last->info)
+	{
+		this->m_last = this->m_last->previous;
+		this->m_last->next = nullptr;
+		this->m_count--;
+		delete current;
+		return;
+	}
 }
