@@ -66,7 +66,8 @@ void UnorderedList<T>::insertLast(const T & tempinfo)
 template<typename T>
 inline void UnorderedList<T>::deleteNode(const T & tempname)
 {
-	if (this->isEmpty == false) {
+	if (this->isEmpty() == false) 
+	{
 		Node<T>* current = &(*this->m_first);
 		if (this->m_count == 1)
 		{
