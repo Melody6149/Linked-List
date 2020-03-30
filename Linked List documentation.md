@@ -1,7 +1,7 @@
 | Melody Eastin |
 | :---      |
 | s198012 |
-| Code desin and data structures |
+| Code design and data structures |
 | Linked List Documentation |
 
 ## I. Requirements
